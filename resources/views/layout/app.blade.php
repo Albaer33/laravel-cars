@@ -21,7 +21,7 @@
                     <a class="nav-link" aria-current="page" href="{{route('cars.index')}}">Lista Auto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ROUTE('cars.create')}}">Crea scheda per una nuova auto</a>
+                    <a class="nav-link" href="{{route('cars.create')}}">Crea scheda per una nuova auto</a>
                   </li>
                 </ul>
               </div>
