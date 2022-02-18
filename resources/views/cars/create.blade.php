@@ -18,24 +18,23 @@
             <form>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Marca Auto</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                  <div id="emailHelp" class="form-text"></div>
+                  <input type="text" class="form-control" id="marca" name="marca">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Modello</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1">
+                  <input type="text" class="form-control" id="modello" name="modello">
                 </div>
                 <div class="mb-3 form-check">
                   <input type="text" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Cilindrata</label>
+                  <label class="form-check-label" for="cilindrata" name="cilindrata" >Cilindrata</label>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="number" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Porte</label>
+                    <label class="form-check-label" for="porte" name="porte">Porte</label>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="text" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Link Immagine</label>
+                    <label class="form-check-label" for="img" name="img">Link Immagine</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
               </form>
