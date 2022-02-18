@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
 
 class CarsController extends Controller
 {
@@ -25,7 +26,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -36,7 +37,16 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $request->validate($this->getValidationRules());
+        
+        // creo nuova variabile model, la popolo e salvo
+        $new_car = new Car();
+        $new_car->fill($form_data);
+        $new_car->save();
+
+        return redirect()->route('cars.show', ['car' => $new_car->id]);
     }
 
     /**
@@ -58,7 +68,8 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
