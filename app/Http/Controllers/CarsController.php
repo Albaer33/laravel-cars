@@ -14,8 +14,7 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
-        
+        $cars = Car::all();        
         return view('cars.index', compact('cars'));
     }
 
@@ -38,7 +37,6 @@ class CarsController extends Controller
     public function store(Request $request)
     {
         $form_data = $request->all();
-
         $request->validate($this->getValidationRules());
         
         // creo nuova variabile model, la popolo e salvo
@@ -57,8 +55,8 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        $cars = Car::findOrFail($id);
-        return view('cars.show', compact('cars'));
+        $car = Car::findOrFail($id);        
+        return view('cars.show', compact('car'));
     }
 
     /**
@@ -82,7 +80,13 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate($this->getValidationRules());
+        
+        $form_data = $request->all();
+        $car_to_update = Car::findOrFail($id);
+        $car_to_update->update($form_data);
+
+        return redirect()->route('cars.show', ['car'=> $car_to_update->id] );
     }
 
     /**
@@ -93,7 +97,10 @@ class CarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car_to_delete = Car::findOrFail($id);
+        $car_to_delete->delete();
+
+        return redirect()->route('cars.index');
     }
 
     protected function getValidationRules() {

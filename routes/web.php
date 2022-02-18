@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-Route::resource('cars', 'CarsController')
+Route::resource('cars', 'CarsController');
