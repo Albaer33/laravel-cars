@@ -15,7 +15,9 @@
         @endif
 
         <div>
-            <form>
+            <form action="{{route('cars.store')}}" method="post">
+                @csrf
+                @method('POST')
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Marca Auto</label>
                   <input type="text" class="form-control" id="marca" name="marca">

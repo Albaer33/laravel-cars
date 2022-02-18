@@ -18,10 +18,10 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="">Lista Auto</a>
+                    <a class="nav-link" aria-current="page" href="{{route('cars.index')}}">Lista Auto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="">Crea scheda per una nuova auto</a>
+                    <a class="nav-link" href="{{ROUTE('cars.create')}}">Crea scheda per una nuova auto</a>
                   </li>
                 </ul>
               </div>
