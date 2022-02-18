@@ -58,7 +58,6 @@ class CarsController extends Controller
     public function show($id)
     {
         $cars = Car::findOrFail($id);
-        
         return view('cars.show', compact('cars'));
     }
 
@@ -96,4 +95,15 @@ class CarsController extends Controller
     {
         //
     }
+
+    protected function getValidationRules() {
+        return [
+            'marca' => 'required|max:30',
+            'modello' => 'required|max:30',
+            'cilindrata' => 'required|max:10',
+            'porte' => 'required|max:6',
+            'img' => 'required|max:250',
+        ];
+    }
+
 }
