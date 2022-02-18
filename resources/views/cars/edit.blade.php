@@ -37,6 +37,11 @@
                   <input type="text" class="form-control" id="porte" name="porte" value="{{ old('porte') ? old('porte') : $car->porte }}">
                 </div>
 
+                <div class="mb-3">
+                  <label for="img" class="form-label">link immagine</label>
+                  <input type="text" class="form-control" id="img" name="img" value="{{ old('img') ? old('img') : $car->img }}">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Invia</button>
             </form>
         </div>

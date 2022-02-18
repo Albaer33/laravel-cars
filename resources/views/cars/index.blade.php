@@ -5,6 +5,7 @@
         <div class="container">
             <h1>Lista delle macchine</h1>
             <div class="list-group">
+
                 @foreach ($cars as $car)
                     <a href="{{ route('cars.show', ['car'=>$car->id]) }}" class="list-group-item list-group-item-action " aria-current="true">
                         <img src="{{ $car->img }}" alt="">

@@ -4,7 +4,7 @@
     <section>
         <div class="container">
             <div class="card">
-                <img src="{{ $card->img }}" alt="">
+                <img src="{{ $car->img }}" alt="">
                 <div class="card-content">
                     <h3 class="card-text">{{ $car->marca }}</h3>
                     <h4 class="card-text">{{ $car->modello }}</h4>

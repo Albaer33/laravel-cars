@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('main_content')
     <div class="container">
@@ -26,17 +26,17 @@
                   <label for="exampleInputPassword1" class="form-label">Modello</label>
                   <input type="text" class="form-control" id="modello" name="modello">
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="text" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="cilindrata" name="cilindrata" >Cilindrata</label>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Cilindrata</label>
+                    <input type="text" class="form-control" id="cilindrata" name="cilindrata">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="number" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="porte" name="porte">Porte</label>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Porte</label>
+                    <input type="text" class="form-control" id="porte" name="porte">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="text" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="img" name="img">Link Immagine</label>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Immagine</label>
+                    <input type="text" class="form-control" id="img" name="img">
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
               </form>
