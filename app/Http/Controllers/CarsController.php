@@ -102,4 +102,15 @@ class CarsController extends Controller
 
         return redirect()->route('cars.index');
     }
+
+    protected function getValidationRules() {
+        return [
+            'marca' => 'required|max:30',
+            'modello' => 'required|max:30',
+            'cilindrata' => 'required|max:10',
+            'porte' => 'required|max:6',
+            'img' => 'required|max:250',
+        ];
+    }
+
 }
