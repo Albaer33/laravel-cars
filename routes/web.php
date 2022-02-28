@@ -15,4 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('cars', 'CarsController');
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::middleware('auth')
+->namespace('Admin')
+->name('admin.')
+->prefix('admin')
+->group(function() {
+    Route::resource('cars', 'CarsController');
+
+});
+

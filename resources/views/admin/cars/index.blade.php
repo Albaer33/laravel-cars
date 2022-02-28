@@ -7,7 +7,7 @@
             <div class="list-group">
 
                 @foreach ($cars as $car)
-                    <a href="{{ route('cars.show', ['car'=>$car->id]) }}" class="list-group-item list-group-item-action " aria-current="true">
+                    <a href="{{ route('admin.cars.show', ['car'=>$car->id]) }}" class="list-group-item list-group-item-action " aria-current="true">
                         <img src="{{ $car->img }}" alt="">
                         <h3>{{ $car->marca }}</h3>
                         <h4>{{ $car->modello }}</h4>
