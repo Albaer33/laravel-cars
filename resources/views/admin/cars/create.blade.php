@@ -15,7 +15,7 @@
         @endif
 
         <div>
-            <form action="{{route('cars.store')}}" method="post">
+            <form action="{{route('admin.cars.store')}}" method="post">
                 @csrf
                 @method('POST')
                 <div class="mb-3">
