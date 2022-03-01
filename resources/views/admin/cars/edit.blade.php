@@ -29,7 +29,7 @@
                   <select id="category_id" name="category_id" class="form-select">
                     <option value="">Nessuna</option>
                       @foreach ($categories as $category)
-                        <option value="{{$category->id}}" {{$post->category && old('category_id', $post->category->id) == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{$car->category && old('category_id', $car->category->id) == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
                       @endforeach
                   </select>
                 </div>
