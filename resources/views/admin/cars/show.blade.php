@@ -10,9 +10,9 @@
                     <h4 class="card-text">{{ $car->modello }}</h4>
                     <h4 class="card-text">{{ $car->cilindrata }}</h4>
                     <h4 class="card-text">{{ $car->porte }}</h4>
-                    <div><a class="btn btn-primary" href="{{ route('cars.edit', ['car' => $car->id]) }}">Modifica</a></div>
+                    <div><a class="btn btn-primary" href="{{ route('admin.cars.edit', ['car' => $car->id]) }}">Modifica</a></div>
                     <div>
-                        <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" method="post">
+                        <form action="{{ route('admin.cars.destroy', ['car' => $car->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
   
