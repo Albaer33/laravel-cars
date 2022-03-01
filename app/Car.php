@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Car extends Model
 {
     protected $table = 'cars';
@@ -14,4 +15,8 @@ class Car extends Model
         'porte',
         'img'
     ];
+
+    public function optionals(){
+        return $this->belongsToMany('App\Optional');
+    }
 }
