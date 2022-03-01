@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Car;
 Use App\Http\Controllers\Controller;
 use App\Category;
+use App\Optional;
+
 
 class CarsController extends Controller
 {
@@ -27,7 +29,10 @@ class CarsController extends Controller
      */
     public function create()
     {
-        return view('admin.cars.create');
+        $categories = Category::all();
+        $optionals = Optional::all();
+        
+        return view('admin.cars.create', compact('categories', 'optionals'));
     }
 
     /**
@@ -112,6 +117,8 @@ class CarsController extends Controller
             'cilindrata' => 'required|max:10',
             'porte' => 'required|max:6',
             'img' => 'required|max:250',
+            'category_id' => 'exists:categories,id|nullable',
+            'optionals' => 'exists:optionals,id'
         ];
     }
 
