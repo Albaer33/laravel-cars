@@ -7,7 +7,10 @@ use App\Car;
 Use App\Http\Controllers\Controller;
 use App\Category;
 use App\Optional;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8bbb8426a0dcafda9da5106850a04e1e27f91891
 
 class CarsController extends Controller
 {
