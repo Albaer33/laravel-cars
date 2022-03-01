@@ -18,13 +18,13 @@ class CreateCarOptionalTable extends Migration
 
             $table->foreign('car_id')
                 ->references('id')
-                ->on('car');
+                ->on('cars');
 
             $table->unsignedBigInteger('optional_id');
 
             $table->foreign('optional_id')
                 ->references('id')
-                ->on('optional');
+                ->on('optionals');
 
             $table->primary(['car_id','optional_id']);
         });
