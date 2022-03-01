@@ -10,6 +10,10 @@
                     <h4 class="card-text">{{ $car->modello }}</h4>
                     <h4 class="card-text">{{ $car->cilindrata }}</h4>
                     <h4 class="card-text">{{ $car->porte }}</h4>
+                    <h4 class="card-text">{{ $car->categories }}</h4>
+                    @foreach ($optionals as $option)
+                        <h5 class="card-text">{{$car->optionals}}</h5>
+                    @endforeach
                     <div><a class="btn btn-primary" href="{{ route('admin.cars.edit', ['car' => $car->id]) }}">Modifica</a></div>
                     <div>
                         <form action="{{ route('admin.cars.destroy', ['car' => $car->id]) }}" method="post">
