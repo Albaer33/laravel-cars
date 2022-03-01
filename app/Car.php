@@ -13,10 +13,15 @@ class Car extends Model
         'modello',
         'cilindrata',
         'porte',
-        'img'
+        'img',
+        'category_id'
     ];
 
     public function optionals(){
         return $this->belongsToMany('App\Optional');
+    }
+    
+    public function category() {
+        return $this->belongTo('App\Category');
     }
 }
