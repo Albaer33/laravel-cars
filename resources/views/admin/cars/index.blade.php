@@ -8,7 +8,7 @@
 
                 @foreach ($cars as $car)
                     <a href="{{ route('admin.cars.show', ['car'=>$car->id]) }}" class="list-group-item list-group-item-action " aria-current="true">
-                        <img src="{{ $car->img }}" alt="">
+                        <img style="width: 600px" src="{{ $car->img }}" alt="">
                         <h3>{{ $car->marca }}</h3>
                         <h4>{{ $car->modello }}</h4>
                         <h4>{{ $car->cilindrata }}</h4>
