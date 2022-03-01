@@ -96,15 +96,12 @@ class CarsController extends Controller
     {
         $request->validate($this->getValidationRules());
         $form_data = $request->all();
-
         $car_to_update = Car::findOrFail($id);
 
-        if(isset($form_data['optionals'])) {
-            // add or edit tags
-            $post->optionals()->sync($form_data['optionals']); 
+        if(isset($form_data['optional'])) {
+            $car_to_update->optionals()->sync($form_data['optional']); 
         } else {
-            // removes all tags
-            $post->optionals()->sync([]);
+            $car_to_update->optionals()->sync([]);
         }
 
         $car_to_update->update($form_data);
@@ -121,7 +118,7 @@ class CarsController extends Controller
     public function destroy($id)
     {
         $car_to_delete = Car::findOrFail($id);
-        $post->optionals()->sync([]);
+        $car_to_delete->optionals()->sync([]);
         $car_to_delete->delete();
 
         return redirect()->route('admin.cars.index');

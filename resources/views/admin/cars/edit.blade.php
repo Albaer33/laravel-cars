@@ -48,10 +48,10 @@
                       @if ($errors->any())
                         <input {{ in_array($optional->id, old('optional' , [])) }} class="form-check-input" name="optional[]" type="checkbox" value="{{$optional->id}}" id="optional-{{$optional->id}}">
                       @else
-                        <input {{ $car->optionals->contains($tag) ? 'checked' : '' }} class="form-check-input" name="optional[]" type="checkbox" value="{{$optional->id}}" id="optional-{{$optional->id}}">
+                        <input {{ $car->optionals->contains($optional) ? 'checked' : '' }} class="form-check-input" name="optional[]" type="checkbox" value="{{$optional->id}}" id="optional-{{$optional->id}}">
                       @endif
-                      <label class="form-check-label" for="tag-{{$tag->id}}">
-                        {{$tag->name}}
+                      <label class="form-check-label" for="optional-{{$optional->id}}">
+                        {{$optional->name}}
                       </label>
                     </div>
                   @endforeach

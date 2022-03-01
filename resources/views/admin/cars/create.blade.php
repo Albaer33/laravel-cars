@@ -20,7 +20,7 @@
                 @method('POST')
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Marca Auto</label>
-                  <input type="text" class="form-control" id="marca" name="marca" value="{{'marca'}}">
+                  <input type="text" class="form-control" id="marca" name="marca" value="{{old('marca')}}">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="category_id">Category</label>
@@ -44,19 +44,19 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Modello</label>
-                  <input type="text" class="form-control" id="modello" name="modello" value="{{'modello'}}">
+                  <input type="text" class="form-control" id="modello" name="modello" value="{{old('modello')}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Cilindrata</label>
-                    <input type="text" class="form-control" id="cilindrata" name="cilindrata" value="{{'cilindrata'}}">
+                    <input type="text" class="form-control" id="cilindrata" name="cilindrata" value="{{old('cilindrata')}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Porte</label>
-                    <input type="text" class="form-control" id="porte" name="porte" value="{{'porte'}}">
+                    <input type="text" class="form-control" id="porte" name="porte" value="{{old('porte')}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Immagine</label>
-                    <input type="text" class="form-control" id="img" name="img" value="{{'img'}}">
+                    <input type="text" class="form-control" id="img" name="img" value="{{old('img')}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
               </form>
