@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Car;
 Use App\Http\Controllers\Controller;
 use App\Category;
+use App\Optional;
 
 class CarsController extends Controller
 {
