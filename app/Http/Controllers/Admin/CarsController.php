@@ -8,6 +8,7 @@ Use App\Http\Controllers\Controller;
 use App\Category;
 use App\Optional;
 
+
 class CarsController extends Controller
 {
     /**
@@ -28,7 +29,10 @@ class CarsController extends Controller
      */
     public function create()
     {
-        return view('admin.cars.create');
+        $categories = Category::all();
+        $optionals = Optional::all();
+        
+        return view('admin.cars.create', compact('categories', 'optionals'));
     }
 
     /**
@@ -46,6 +50,10 @@ class CarsController extends Controller
         $new_car = new Car();
         $new_car->fill($form_data);
         $new_car->save();
+
+        if(array_key_exists('optionals', $form_data)) {
+            $new_post->tags()->sync($form_data['tags']);
+        } 
 
         return redirect()->route('admin.cars.show', ['car' => $new_car->id]);
     }
@@ -71,7 +79,10 @@ class CarsController extends Controller
     public function edit($id)
     {
         $car = Car::findOrFail($id);
-        return view('admin.cars.edit', compact('car'));
+        $categories = Category::all();
+        $optionals = Optional::all();
+
+        return view('admin.cars.edit', compact('car', 'categories', 'optionals'));
     }
 
     /**
@@ -84,9 +95,18 @@ class CarsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate($this->getValidationRules());
-        
         $form_data = $request->all();
+
         $car_to_update = Car::findOrFail($id);
+
+        if(isset($form_data['optionals'])) {
+            // add or edit tags
+            $post->optionals()->sync($form_data['optionals']); 
+        } else {
+            // removes all tags
+            $post->optionals()->sync([]);
+        }
+
         $car_to_update->update($form_data);
 
         return redirect()->route('admin.cars.show', ['car'=> $car_to_update->id] );
@@ -101,6 +121,7 @@ class CarsController extends Controller
     public function destroy($id)
     {
         $car_to_delete = Car::findOrFail($id);
+        $post->optionals()->sync([]);
         $car_to_delete->delete();
 
         return redirect()->route('admin.cars.index');
@@ -113,6 +134,8 @@ class CarsController extends Controller
             'cilindrata' => 'required|max:10',
             'porte' => 'required|max:6',
             'img' => 'required|max:250',
+            'category_id' => 'exists:categories,id|nullable',
+            'optionals' => 'exists:optionals,id'
         ];
     }
 
